@@ -1,6 +1,20 @@
 import { Util } from "./Util";
 
 export class Personagem {
+    descansar(arg0: number) {
+        throw new Error("Method not implemented.");
+    }
+    
+    treinarDefesa(numeroHoras: number): void {
+        this.defesa += numeroHoras * Util.randomizar(1,10);
+        this.vitalidade -= numeroHoras * Util.randomizar(1,10);
+
+        if(this.vitalidade < 0){
+            throw new Error("O herói morreu");
+        }
+    }
+
+ 
     nome: string;
     nivel: number;
     vida: number;
